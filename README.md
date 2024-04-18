@@ -9,12 +9,10 @@ API Test Automation test scenario for validating successful transactions in para
  ### allure installed
 
 ## Installation 
- ### intall java    : from oracle --> openjdk 21.0.2 2024-01-16
- ### install maven  : from maven repo  --> version: "14.3.1"
- ### install allure : brew install allure --> version: "2.28.0"
+ ### intall java    : from oracle  (version: 21.0.2 )
+ ### install maven  : from maven repo  (version: "14.3.1")
+ ### install allure : brew install allure (version: "2.28.0")
 
-## Configuration
- ### make sure that you have the packages installed before running the tests 
  
 ## Running the Tests
 ### to run the tests: mvn test 
