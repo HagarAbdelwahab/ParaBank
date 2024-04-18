@@ -1,5 +1,6 @@
 # ParaBank
-API Test Automation test cases for validating successful transactions in paraBank
+API Test Automation test scenario for validating successful transactions in paraBank
+
 
 ## Prerequisites
  ### java installed
@@ -13,8 +14,8 @@ API Test Automation test cases for validating successful transactions in paraBan
  ### install allure : brew install allure --> version: "2.28.0"
 
 ## Configuration
-
-
+ ### make sure that you have the packages installed before running the tests 
+ 
 ## Running the Tests
 ### to run the tests: mvn test 
 ### to generate the resport: allure serve 
