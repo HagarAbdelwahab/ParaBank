@@ -16,17 +16,6 @@ import static io.restassured.RestAssured.given;
 
 public class AuthenticationService {
 
-    public static String login(String username, String password) {
-        Response re = given()
-                .formParam("username", username)
-                .formParam("password", password)
-                .when()
-                .post("https://parabank.parasoft.com/parabank/login.htm")
-                .then().log().all().extract().response();
-
-        return re.getCookie("Cookie");
-    }
-
 
     @Step("register a new user")
     public static Map<String, String> register(String filePath, String username) {
@@ -48,11 +37,9 @@ public class AuthenticationService {
                 .formParam("customer.username", username)
                 .formParam("customer.password", JSONTestDataReader.getValueFromJsonFile(filePath, "customer-info", "password"))
                 .formParam("repeatedPassword", JSONTestDataReader.getValueFromJsonFile(filePath, "customer-info", "confirmedPass"))
-                .log().all()
                 .when()
                 .post(Endpoints.REGISTER)
                 .then()
-                .log().all()
                 .statusCode(200)
                 .extract()
                 .response();

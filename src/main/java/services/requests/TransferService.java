@@ -20,7 +20,6 @@ public class TransferService {
                 .queryParam("fromAccountId", fromAccountId)
                 .queryParam("toAccountId", toAccountId)
                 .queryParam("amount", amount)
-                .log().all()
                 .when()
                 .post(Endpoints.TRANSFER_MONEY);
 

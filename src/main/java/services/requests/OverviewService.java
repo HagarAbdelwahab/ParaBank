@@ -17,10 +17,9 @@ public class OverviewService {
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)
                 .cookies(cookie)
-                .log().all()
                 .when()
                 .get(Endpoints.OVERVIEW)
-                .then().log().all().extract().response();
+                .then().extract().response();
         Allure.addAttachment("Response: ", response.getBody().prettyPrint());
         return response;
 

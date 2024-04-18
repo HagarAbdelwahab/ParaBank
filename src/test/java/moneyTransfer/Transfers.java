@@ -34,7 +34,6 @@ public class Transfers {
     @Description("When the user transfers amount from one account to another, the transferred amount should be deducted from the account balance.")
     @Test(description = "Transfer the money from different user accounts")
     void checkTransferIsSuccessful(){
-
         //get customer id
         Response customerInfo = OverviewService.getCustomerInfo(cookie);
         String customerID = Overview.getCustomerId(customerInfo);
@@ -43,7 +42,6 @@ public class Transfers {
         Response accountsResponse = AccountService.getAccounts(customerID, cookie);
         int mainAccountID = JSONExtractor.getIntFromJson(accountsResponse,"[0].id");
         Double mainAccountBalance = Accounts.getAccountBalance(accountsResponse, mainAccountID);
-        System.out.println(mainAccountBalance+ " main account balance");
 
         //open a new account from main account
         Response newAccountResponse =AccountService.openAccount(customerID,mainAccountID, cookie);
@@ -71,19 +69,7 @@ public class Transfers {
         softAssert.assertEquals(newAccountBalanceAfterTransfer,newAccountBalance+transferredAmount);
 
         softAssert.assertAll();
-        //TODO: read data from test data files
-        //TODO: put the end points in the end points class
-        //TODO: put the package paths
-        //TODO: categorize the actions on the responses
-        //TODO: report
-
-        //TODO: remove headers
-        //TODO: change test class name
-        //TODO: change the test method name
-        //TODO: add steps to run the test
-        //TODO: readme file
         //TODO: write manual test case
-        //TODO: using of pojo
 
     }
 
@@ -91,9 +77,7 @@ public class Transfers {
     void setup(){
         //register a new user
         String username = RandomStringUtils.random(11, true, false);
-        System.out.println("username is : "+username);
         cookie = AuthenticationService.register(PackagesPaths.TEST_DATA_PATH+"customerInfo.json",username);
-
     }
 
 

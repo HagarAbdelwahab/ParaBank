@@ -19,7 +19,6 @@ public class AccountService {
                 .queryParam("customerId", customerId)
                 .queryParam("newAccountType", 0)
                 .queryParam("fromAccountId", fromAccountId)
-                .log().all()
                 .when()
                 .post(Endpoints.CREATE_ACCOUNT);
         Allure.addAttachment("Response: ", response.getBody().prettyPrint());
@@ -32,7 +31,6 @@ public class AccountService {
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)
                 .cookies(cookie)
-                .log().all()
                 .when()
                 .get(String.format(Endpoints.ACCOUNTS,customerId))
                 .then().extract().response();
