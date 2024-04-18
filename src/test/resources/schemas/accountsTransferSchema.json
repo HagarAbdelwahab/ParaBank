@@ -1,0 +1,59 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1713477054.json",
+  "title": "Root",
+  "type": "array",
+  "default": [],
+  "items":{
+    "$id": "#root/items",
+    "title": "Items",
+    "type": "object",
+    "required": [
+      "id",
+      "customerId",
+      "type",
+      "balance"
+    ],
+    "properties": {
+      "id": {
+        "$id": "#root/items/id",
+        "title": "Id",
+        "type": "integer",
+        "examples": [
+          30216
+        ],
+        "default": 0
+      },
+      "customerId": {
+        "$id": "#root/items/customerId",
+        "title": "Customerid",
+        "type": "integer",
+        "examples": [
+          15653
+        ],
+        "default": 0
+      },
+      "type": {
+        "$id": "#root/items/type",
+        "title": "Type",
+        "type": "string",
+        "default": "",
+        "examples": [
+          "CHECKING"
+        ],
+        "pattern": "^.*$"
+      },
+      "balance": {
+        "$id": "#root/items/balance",
+        "title": "Balance",
+        "type": "number",
+        "examples": [
+          98899.5
+        ],
+        "default": 0.0
+      }
+    }
+  }
+
+}

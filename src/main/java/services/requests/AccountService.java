@@ -3,11 +3,13 @@ package services.requests;
 import constants.Endpoints;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
 
+import java.io.InputStream;
 import java.util.Map;
 public class AccountService {
 
@@ -28,12 +30,16 @@ public class AccountService {
 
     @Step("Get list of accounts")
     public static Response getAccounts(String customerId, Map<String, String> cookie){
+        InputStream createBookingJsonSchema = AccountService.class.getClassLoader ()
+                .getResourceAsStream ("schemas/accountsTransferSchema.json");
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)
                 .cookies(cookie)
                 .when()
                 .get(String.format(Endpoints.ACCOUNTS,customerId))
-                .then().extract().response();
+                .then().
+                assertThat().body(JsonSchemaValidator.matchesJsonSchema (createBookingJsonSchema)).
+                extract().response();
         Allure.addAttachment("Response: ", response.getBody().prettyPrint());
         return response;
 
