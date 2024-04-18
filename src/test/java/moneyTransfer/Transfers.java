@@ -69,7 +69,6 @@ public class Transfers {
         softAssert.assertEquals(newAccountBalanceAfterTransfer,newAccountBalance+transferredAmount);
 
         softAssert.assertAll();
-        //TODO: write manual test case
 
     }
 
