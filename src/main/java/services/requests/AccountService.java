@@ -30,7 +30,7 @@ public class AccountService {
 
     @Step("Get list of accounts")
     public static Response getAccounts(String customerId, Map<String, String> cookie){
-        InputStream createBookingJsonSchema = AccountService.class.getClassLoader ()
+        InputStream accountsTransferSchema = AccountService.class.getClassLoader ()
                 .getResourceAsStream ("schemas/accountsTransferSchema.json");
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)
@@ -38,7 +38,7 @@ public class AccountService {
                 .when()
                 .get(String.format(Endpoints.ACCOUNTS,customerId))
                 .then().
-                assertThat().body(JsonSchemaValidator.matchesJsonSchema (createBookingJsonSchema)).
+                assertThat().body(JsonSchemaValidator.matchesJsonSchema (accountsTransferSchema)).
                 extract().response();
         Allure.addAttachment("Response: ", response.getBody().prettyPrint());
         return response;
