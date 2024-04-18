@@ -18,10 +18,6 @@ public class AuthenticationService {
 
     public static String login(String username, String password) {
         Response re = given()
-                .header("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
-                .header("accept-language", "en-US,en;q=0.9,ar;q=0.8")
-                .header("cache-control", "max-age=0")
-                .header("content-type", "application/x-www-form-urlencoded")
                 .formParam("username", username)
                 .formParam("password", password)
                 .when()
@@ -40,8 +36,6 @@ public class AuthenticationService {
         Map<String, String> cookies = initialResponse.getCookies();
 
         Response response = given().baseUri(Endpoints.BASE_URL)
-                .header("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
-                .header("upgrade-insecure-requests", "1")
                 .cookies(cookies)
                 .formParam("customer.firstName", JSONTestDataReader.getValueFromJsonFile(filePath, "customer-info", "firstName"))
                 .formParam("customer.lastName", JSONTestDataReader.getValueFromJsonFile(filePath, "customer-info", "lastName"))

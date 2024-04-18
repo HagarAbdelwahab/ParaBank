@@ -2,6 +2,7 @@ package moneyTransfer;
 
 import constants.PackagesPaths;
 import io.qameta.allure.Description;
+import io.qameta.allure.TmsLink;
 import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.BeforeClass;
@@ -20,14 +21,15 @@ import org.testng.asserts.SoftAssert;
 import java.util.Map;
 
 
-public class check {
+public class Transfers {
     SoftAssert softAssert = new SoftAssert();
     Map<String, String> cookie;
 
 
+    @TmsLink("TMS-456")
     @Description("When the user transfers amount from one account to another, the transferred amount should be deducted from the account balance.")
     @Test(description = "")
-    void checkTransfer(){
+    void checkTransferIsSuccessful(){
 
         //get customer id
         Response customerInfo = OverviewService.getCustomerInfo(cookie);
@@ -69,11 +71,15 @@ public class check {
         //TODO: put the end points in the end points class
         //TODO: put the package paths
         //TODO: categorize the actions on the responses
+        //TODO: report
 
         //TODO: remove headers
-        //TODO: report
+        //TODO: change test class name
+        //TODO: change the test method name
+        //TODO: add steps to run the test
         //TODO: readme file
-        //
+        //TODO: write manual test case
+        //TODO: using of pojo
 
     }
 

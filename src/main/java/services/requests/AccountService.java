@@ -15,10 +15,6 @@ public class AccountService {
     public static Response openAccount(String customerId, int fromAccountId,  Map<String, String> cookie){
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)
-                .header("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
-                .header("accept-language", "en-US,en;q=0.9,ar;q=0.8")
-                .header("cache-control", "max-age=0")
-                .header("content-type", "application/x-www-form-urlencoded")
                 .cookies(cookie)
                 .queryParam("customerId", customerId)
                 .queryParam("newAccountType", 0)
@@ -35,10 +31,6 @@ public class AccountService {
     public static Response getAccounts(String customerId, Map<String, String> cookie){
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)
-                .header("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
-                .header("accept-language", "en-US,en;q=0.9,ar;q=0.8")
-                .header("cache-control", "max-age=0")
-                .header("content-type", "application/x-www-form-urlencoded")
                 .cookies(cookie)
                 .log().all()
                 .when()

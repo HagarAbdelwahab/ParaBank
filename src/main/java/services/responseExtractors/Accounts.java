@@ -30,7 +30,7 @@ public class Accounts {
                 balance = jsonObject.getDouble("balance");
             }
         }
-        Allure.addAttachment("account balance is: ", String.valueOf(balance));
+        Allure.addAttachment("account "+accountID+" has balance:  ", String.valueOf(balance));
         return balance;
 
     }
