@@ -31,7 +31,7 @@ public class AccountService {
     @Step("Get list of accounts")
     public static Response getAccounts(String customerId, Map<String, String> cookie){
         InputStream accountsSchema = AccountService.class.getClassLoader ()
-                .getResourceAsStream ("schemas/accountsTransferSchema.json");
+                .getResourceAsStream ("schemas/accountsSchema.json");
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)
                 .cookies(cookie)
