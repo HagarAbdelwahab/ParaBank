@@ -22,16 +22,16 @@ API Test Automation test cases for validating successful transactions in paraBan
 
 
 ## Test Structure
-  1. main
+ - main
     - java
       - constants
       - services
       - utils
     - resources
- 2. test
+ - test
     - java
-      - moneyTransfer
-        -Transfers
+       - moneyTransfer
+       - Transfers
     - resources
-     - testData
-     - Allure
+      - testData
+      - Allure
