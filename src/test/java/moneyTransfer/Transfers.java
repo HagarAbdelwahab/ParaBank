@@ -30,7 +30,7 @@ public class Transfers {
 
 
     @Severity(CRITICAL)
-    @TmsLink("TMS-456")
+    @TmsLink("")
     @Description("When the user transfers amount from one account to another, the transferred amount should be deducted from the account balance.")
     @Test(description = "Transfer the money from different user accounts")
     void checkTransferIsSuccessful(){
