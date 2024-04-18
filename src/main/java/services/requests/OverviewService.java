@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class OverviewService {
 
-    @Step("get customer information")
+    @Step("Get customer information")
     public static Response getCustomerInfo(Map<String, String> cookie) {
 
         Response response = given()

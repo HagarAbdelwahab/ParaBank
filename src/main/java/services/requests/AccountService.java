@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 import java.util.Map;
 public class AccountService {
 
-    @Step("open a new account")
+    @Step("Open a new account")
     public static Response openAccount(String customerId, int fromAccountId,  Map<String, String> cookie){
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)
@@ -26,7 +26,7 @@ public class AccountService {
 
     }
 
-    @Step("get list of accounts")
+    @Step("Get list of accounts")
     public static Response getAccounts(String customerId, Map<String, String> cookie){
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)

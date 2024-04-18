@@ -17,7 +17,7 @@ import static io.restassured.RestAssured.given;
 public class AuthenticationService {
 
 
-    @Step("register a new user")
+    @Step("Register a new user")
     public static Map<String, String> register(String filePath, String username) {
 
         // Make a GET request to retrieve initial cookies

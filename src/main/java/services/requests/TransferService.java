@@ -11,8 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class TransferService {
 
-    @Step("transfer money from one account to another")
-
+    @Step("Transfer money from one account to another")
     public static Response transferMoney(int fromAccountId, int toAccountId, Double amount, Map<String, String> cookie) {
         Response response = given()
                 .baseUri(Endpoints.BASE_URL)
