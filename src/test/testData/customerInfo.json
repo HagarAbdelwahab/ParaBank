@@ -1,0 +1,14 @@
+{
+  "customer-info": {
+    "firstName": "Hagar",
+    "lastName": "Abdelwahab",
+    "street": "Zakaria",
+    "city": "Cairo",
+    "state": "Cairo",
+    "zipCode": "123",
+    "phoneNumber": "456",
+    "ssn": "12233",
+    "password": "Hagar3$5141",
+    "confirmedPass": "Hagar3$5141"
+  }
+}
