@@ -2,13 +2,15 @@
 API Test Automation test cases for validating successful transactions in paraBank
 
 ## Prerequisites
-
+ ### java installed
+ ### maven installed
+ ### dependencies in pom.xml isntalled 
+ ### allure installed
 
 ## Installation 
- ### intall java    : from oracle 
- ### install maven  : from maven repo
- ### install allure : brew install allure
-
+ ### intall java    : from oracle --> openjdk 21.0.2 2024-01-16
+ ### install maven  : from maven repo  --> version: "14.3.1"
+ ### install allure : brew install allure --> version: "2.28.0"
 
 ## Configuration
 
