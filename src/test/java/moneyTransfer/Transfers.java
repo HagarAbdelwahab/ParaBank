@@ -2,6 +2,7 @@ package moneyTransfer;
 
 import constants.PackagesPaths;
 import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
 import io.qameta.allure.TmsLink;
 import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -20,15 +21,18 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.Map;
 
+import static io.qameta.allure.SeverityLevel.CRITICAL;
+
 
 public class Transfers {
     SoftAssert softAssert = new SoftAssert();
     Map<String, String> cookie;
 
 
+    @Severity(CRITICAL)
     @TmsLink("TMS-456")
     @Description("When the user transfers amount from one account to another, the transferred amount should be deducted from the account balance.")
-    @Test(description = "")
+    @Test(description = "Transfer the money from different user accounts")
     void checkTransferIsSuccessful(){
 
         //get customer id
